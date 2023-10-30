@@ -1,12 +1,14 @@
 # sms-gateway
-If you are trying yo implement SMS gateway for your applications in Bhutan, the defacto SMS gateway application you may use is playSMS. Here I am goig to show how to install playSMS and connect your playSMS to BMobile or TashiCell SMSC gateways. 
+If you are trying to implement an SMS gateway for your applications in Bhutan, the defacto SMS gateway application you may use is playSMS. 
+
+Here I am going to show how to install playSMS and connect your playSMS to BMobile or TashiCell SMSC gateways. 
 
 ## Installation of playSMS
-playSMS runs on Ubuntu or debian based Operating Systems. So, you will need your application server running on these OSs. You may create a separate droplet/ec2 instance/vm for installing your SMS gateway.
+playSMS runs on Ubuntu or Debian-based Operating Systems. So, you will need your application server running on these OSs. You may create a separate droplet/ec2 instance/virtual machine for installing your SMS gateway.
 
 There are several ways in which you can install playSMS. You can find [Installation Guide here](https://playsms.org/).
 
-I am going share how to install playSMS in a docker image (which is easier to install and manage).
+I am going to share how to install playSMS in a docker image (which is easier to install and manage).
 
 ### Installation of playSMS as a docker image
 Click here for [Docker installation guide](https://docs.docker.com/engine/install/ubuntu/)
