@@ -13,11 +13,13 @@ I am going to share how to install playSMS in a docker image (which is easier to
 ### Installation of playSMS as a docker image
 Click here for [Docker installation guide](https://docs.docker.com/engine/install/ubuntu/)
 
-Install docker locally, and run this to download playSMS 1.4.3 docker container: \
-``docker pull playsms/playsms:1.4.3``
-\
+Install docker locally, and run this to download playSMS 1.4.3 docker container: 
 
-And then run this to get playSMS up and running:\
+``docker pull playsms/playsms:1.4.3``
+
+
+And then run this to get playSMS up and running:
+
 ``docker run -d -p 80:80 playsms/playsms``
 
 
@@ -29,7 +31,8 @@ Verify if playSMS is installed correctly by running playsmsd check on the inside
 ``docker exec CONTAINER_ID playsmsd check``
 
 ## Testing playSMS with Kannel
-How to install Kannel for playSMS in Ubuntu: \
+How to install Kannel for playSMS in Ubuntu: 
+
 ``sudo apt install kannel kannel-extras``
  
 ``sudo mkdir -p /var/log/kannel /var/run/kannel /var/spool/kannel/store``
@@ -39,29 +42,38 @@ How to install Kannel for playSMS in Ubuntu: \
 ``sudo usermod -a -G dialout kannel``
  
 
-Edit /etc/default/kannel to activate smsbox, smsbox is part of Kannel, the daemon that handles SMS in Kannel: \
+Edit /etc/default/kannel to activate smsbox, smsbox is part of Kannel, the daemon that handles SMS in Kannel: 
+
 ``sudo sed -i 's/#START_SMSBOX/START_SMSBOX/' /etc/default/kannel``
 
-I don’t need wapbox so I disable it: \
+I don’t need wapbox so I disable it: 
+
 ``sudo sed -i 's/START_WAPBOX/#START_WAPBOX/' /etc/default/kannel``
 
-Backup original kannel.conf: \
+Backup original kannel.conf: 
+
 ``sudo cp /etc/kannel/kannel.conf /etc/kannel/kannel.conf.dist``
 
 Then edit ``kannel.conf`` using the SMSC details provided by [BMobile](https://www.bt.bt/) and/or [TashiCell](https://www.tashicell.com/other-services/smsc-gateway) upon subscription. 
 
+
 ## Restart Kannel Daemon:
 Check status:
-``/etc/init.d/kannel status``				OR \
+
+``/etc/init.d/kannel status``				OR 
+
 ``systemctl kannel status``
 
 
- Stop:\
-``/etc/init.d/kannel stop`` 					OR\
+ Stop:
+ 
+``/etc/init.d/kannel stop`` 					OR
+
 ``systemctl kannel stop``
  
-Start:\
-``/etc/init.d/kannel start``					OR\
+Start:
+
+``/etc/init.d/kannel start``					OR
 ``systemctl kannel start``
 
 ## Manage gateway and SMSC
