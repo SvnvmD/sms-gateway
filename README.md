@@ -3,12 +3,14 @@ If you are trying to implement an SMS gateway for your applications in Bhutan, t
 
 Here I am going to show how to install playSMS and connect your playSMS to BMobile or TashiCell SMSC gateways. 
 
+
 ## Installation of playSMS
 playSMS runs on Ubuntu or Debian-based Operating Systems. So, you will need your application server running on these OSs. You may create a separate droplet/ec2 instance/virtual machine for installing your SMS gateway.
 
 There are several ways in which you can install playSMS. You can find [Installation Guide here](https://playsms.org/).
 
 I am going to share how to install playSMS in a docker image (which is easier to install and manage).
+
 
 ### Installation of playSMS as a docker image
 Click here for [Docker installation guide](https://docs.docker.com/engine/install/ubuntu/)
@@ -29,6 +31,7 @@ Access playSMS web admin by browsing localhost or your server’s IP address, or
 Verify if playSMS is installed correctly by running playsmsd check on the inside of the container, run this:\
 
 ``docker exec CONTAINER_ID playsmsd check``
+
 
 ## Testing playSMS with Kannel
 How to install Kannel for playSMS in Ubuntu: 
@@ -76,8 +79,10 @@ Start:
 ``/etc/init.d/kannel start``					OR
 ``systemctl kannel start``
 
+
 ## Manage gateway and SMSC
 Go to Settings -> Manage gateway and SMSC and click Manage (the folder icon) on Gateway Kannel. Fill in with data form ``kannel.conf``
+
 
 ## For Further Assistance
 For Further Assistance contact me via my [blog](https://bhutanio.com/)
